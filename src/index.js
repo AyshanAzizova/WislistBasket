@@ -9,6 +9,7 @@ root.render(
   <WishlistProvider>
     <BasketProvider>
       <App />
+      
     </BasketProvider>
 
   </WishlistProvider>

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import style from './BasketContext.module.css'
 
 const BasketContext = createContext();
 
@@ -27,6 +28,15 @@ export const BasketProvider = ({ children }) => {
   return (
     <BasketContext.Provider value={{ basket, addToBasket }}>
       {children}
+      <div className={style.sidebar}>
+      <ul>
+      {basket.map((item) => (
+        <li key={item.id}>
+          {item.name} - {item.count}
+        </li>
+      ))}
+    </ul>
+      </div>
     </BasketContext.Provider>
   );
 };
